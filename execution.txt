@@ -1,0 +1,68 @@
+============================================================
+  Ad Creator - Execution Instructions
+============================================================
+
+PREREQUISITES:
+  - Python 3.7 or higher
+  - Internet connection (for API calls)
+
+SETUP:
+  1. Navigate to the Codebase directory:
+     cd Codebase
+
+  2. Install required packages:
+     pip install -r requirements.txt
+
+  3. Set Hugging Face API token (for SDXL model):
+     - Sign up free at https://huggingface.co
+     - Go to https://huggingface.co/settings/tokens
+     - Create a token, then open the .env file in the Codebase folder:
+       HUGGINGFACE_API_TOKEN=hf_your_actual_token_here
+     - Alternatively, set it via terminal:
+       export HUGGINGFACE_API_TOKEN=hf_your_token   (Mac/Linux)
+       set HUGGINGFACE_API_TOKEN=hf_your_token       (Windows)
+     - The app will also prompt for the token on startup if not found
+     - FLUX and SDXL Turbo via Pollinations.ai work without any token
+
+EXECUTION:
+  4. Run the application:
+     python main.py
+
+  The application will present an interactive CLI menu:
+    [1] Create New Advertisement - Generate ad images with AI
+    [2] Multi-Model Comparison  - Compare SDXL vs FLUX outputs
+    [3] Post-Process Image      - Add text overlay, logo, adjustments
+    [4] Export Image             - Export in PNG/JPEG/WebP for ad platforms
+    [5] View Gallery             - Browse generated images
+    [6] Exit
+
+EXAMPLE SESSION:
+  $ cd Codebase
+  $ pip install -r requirements.txt
+  $ nano .env    (paste your HF token and save)
+  $ python main.py
+
+  Select option: 1
+  Product/Brand Name: Mumbai Special Restaurant
+  Description: Restaurant serving authentic Mumbai street food
+  Select Ad Format: 1 (Instagram Post)
+  Select Visual Style: 3 (Call to Action)
+  Select Product Category: 1 (Food & Beverage)
+  Select AI Model: 1 (Stable Diffusion XL)
+  Number of images: 2
+  Generate images? y
+
+OUTPUT:
+  Generated images are saved in: ./outputs/
+
+MODELS USED:
+  1. Stable Diffusion XL (Stability AI) via Hugging Face Inference API
+     - High quality, requires free HF token
+  2. FLUX (Black Forest Labs) via Pollinations.ai
+     - Excellent prompt adherence, completely free
+
+NOTE:
+  - No GPU required (uses cloud APIs)
+  - HF token is free (sign up at huggingface.co)
+  - Pollinations.ai needs no token at all
+  - Works on any OS (Windows/macOS/Linux)
